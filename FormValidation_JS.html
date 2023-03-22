@@ -1,0 +1,137 @@
+<!--  W.A.P to validate registration form using JavaScript. -->
+<!doctpye html>
+<head>
+	<title> Registration Form </title>
+	<script>		    	
+		function FormValidation()
+		{
+		     
+		       var UniversityName = document.getElementById("UniName").value;
+		       var CollegeName = document.getElementById("CollegeName").value;		     	   
+				       
+		       var CourseName = document.getElementById("CourseName").value;
+		       var StudentName = document.getElementById("StudentName").value;
+		       
+		       var Male = document.getElementById("Male").checked ;		       
+		       var Female = document.getElementById("Female").checked ;		       		      
+		        var city = document.getElementById("city").value ;
+
+			<!-- To validate checkbox-->
+		      var Java = document.getElementById("java").checked;
+		      var php = document.getElementById("php").checked;
+		      var dotnet = document.getElementById("dotnet").checked;
+		      var javascript = document.getElementById("javascript").checked;
+		      var html = document.getElementById("html").checked;
+		      var css = document.getElementById("css").checked;
+		      
+		       if(UniversityName == "") { 	
+			alert("Please insert University Name.");
+			return false;		
+		       }
+
+		       if(CollegeName == "")  {
+			alert("Please insert College Name.");		
+			return false;	
+		       }
+
+		       if(CourseName == "") {
+			alert("Please insert Course Name.");
+			return false;			
+		       }
+
+		       if(StudentName == "") {
+			alert("Please insert Student Name.");
+			return false;			
+		       }		    
+					       
+		       if(Male == false && Female == false)
+		        {
+			alert("Please select gender.");
+			return false;
+		        }
+
+		       if(city == "")
+		       {
+			alert("Please select city.");
+			return false;			
+		       }
+
+		        if(Java == false && php == false && dotnet == false && javascript == false && html == false && css == false)
+		        {
+			alert("please select subject name.");
+			return false;
+		        }		       
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1> Registration From </h1>
+		<form>
+		<table>
+			<tr>
+			          <td> University Name </td>
+			          <td> <input type="text" name="UniversityName" id="UniName"> </td>
+			</tr>
+			<tr>
+			           <td> College Name </td>
+			          <td> <input type="text" name="CollegeName" id="CollegeName"> </td>
+			</tr>
+			<tr>
+			           <td> Course Name </td>
+			          <td> <input type="text" name="CourseName" id="CourseName"> </td>
+			</tr>
+			<tr>
+			           <td> Student Name </td>
+			          <td> <input type="text" name="StudentName" id="StudentName"> </td>
+			</tr>
+						
+			<tr>
+			           <td> Gender </td>
+			          <td> 
+				   <input type="radio" name="Gender" value="Male" id="Male"> Male 
+   				   <input type="radio" name="Gender" value="Female" id="Female"> Female
+			          </td>
+			</tr>
+			
+			<tr>
+			           <td> City </td>
+			          <td>
+				<select id="city">
+					<option text="Select State" value=""> Select City </option>
+					<option text="Dehradun" value="Dehradun"> Dehradun </option>
+					<option text="Haridwar" value="Haridwar"> Haridwar </option>
+					<option text="Moradabad" value="Moradabad"> Moradabad </option>
+					<option text="Patna" value="Patna">Patna </option>
+					<option text="Jhansi" value="Jhansi">Jhansi </option>
+				</select> 
+			          </td>
+			</tr>
+			<tr>
+			           <td> Subjects </td>
+			          <td>
+				<input type="checkbox" value="Java" id="java"> Java </br>
+				<input type="checkbox" value="PHP" id="php"> PHP </br>
+				<input type="checkbox" value="Dot Net" id="dotnet"> Dot Net </br>
+				<input type="checkbox" value="JavaScript" id="javascript"> JavaScript </br>
+				<input type="checkbox" value="HTML" id="html"> HTML </br>
+				<input type="checkbox" value="CSS" id="css"> CSS
+			          </td>
+			</tr>
+			<tr>
+				<td> Email Id </td>
+				<td> <input type="text" name="Email" id="email" ></td>
+			</tr>
+			<tr>
+				<td> Mobile Number </td>
+				<td> <input type="text" name="MobileNumber" id="Mobile" > </td>
+			</tr>
+			<tr>		
+			           <td></td>
+			          <td> <input type="submit" value="Save" id="btnSubmit" onclick="return(FormValidation())"></td>
+			</tr>
+		</table>
+		</form>
+	</center>
+</body>
+</html>
