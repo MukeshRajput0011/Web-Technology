@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+	<title> Registration Form </title>
+
+<script  src="https://code.jquery.com/jquery-3.6.4.min.js"></script>	
+		<script>
+		$(document).ready(function(){ 						
+		$("#btnSubmit").click(function(){
+				
+		  var studentName = $("#student_name").val(); 
+		   var admissionNo = $("#admission_no").val();
+
+		   if(studentName == "")
+		   {
+		      alert("Kindly insert Student Name");
+		      return false;
+		   }
+		 if(admissionNo  == "")
+		   {
+		      alert("Kindly insert Admission No");
+		      return false;
+		   }
+              	var courseName = $("#course_name").val();
+		 if(courseName  == "")
+		   {
+		      alert("Kindly select course name");
+		      return false;
+		   }
+              	var male = $("#male").prop('checked');
+		var female = $("#female").prop('checked');
+		
+		if(male == false && female == false)
+		{
+		    alert("Kindly select gender");
+		     return false;
+		}
+
+		var os = $("#os").prop('checked');
+		var cn = $("#cn").prop('checked');
+		var dbms = $("#dbms").prop('checked');
+		var daa = $("#daa").prop('checked');
+		var ds = $("#ds").prop('checked');
+		var wt = $("#wt").prop('checked');
+		var am = $("#am").prop('checked');
+		var mis = $("#mis").prop('checked');
+
+ if(os == false && cn == false && dbms == false && daa == false && 
+	ds == false && wt == false && am == false && mis == false)
+	{
+		alert("Kindly select at least 5 subjects");
+		     return false;
+	}
+
+	var count = 0;
+	if(os == true){  count++; }		
+	if(cn == true){  count++; }		
+	if(dbms == true){  count++; }		
+	if(daa == true){  count++; }		
+	if(ds == true){  count++; }		
+	if(wt == true){  count++; }		
+	if(am == true){  count++; }		
+	if(mis == true){  count++; }	
+
+	if(count < 5){
+		alert("Kindly select at least five subjects");
+		return false;
+	}
+
+  			});
+		});		
+	</script>
+</head>
+<body>
+	<center>
+		<h1> Registration Form </h1>
+	    <form>
+	     <table>
+		<tr>
+		         <td> Student Name </td>
+		         <td> <input type="text" id="student_name" > </td>
+		</tr>
+		<tr>
+		         <td> Admission No. </td>
+		         <td> <input type="text" id="admission_no"> </td>
+		</tr>
+		<tr>
+		         <td> Course Name </td>
+		         <td> 
+			   <select id="course_name">	
+			               <option value=""> Select Course </option>
+			               <option> B.Tech(CSE) </option>
+			               <option> B.Tech(ME) </option>
+			               <option> B.Tech(CE) </option>
+			               <option> B.Tech(EEE) </option>
+			   </select>
+		         </td>
+		</tr>
+		<tr>
+		      <td> Gender </td>
+		      <td>
+			<input type="radio" name="gender" id="male"> Male
+			<input type="radio" name="gender" id="female"> Female
+		      </td>
+		</tr>
+		<tr>
+		      <td> Subjects </td>
+		      <td>
+		            <input type="checkbox" id="os"> Operating System </br>
+		            <input type="checkbox" id="cn"> Computer Networks </br>
+		            <input type="checkbox" id="dbms"> DBMS </br>
+		            <input type="checkbox" id="daa"> DAA </br>
+		            <input type="checkbox" id="ds"> Data Structure </br>
+		            <input type="checkbox" id="wt"> Web Technology </br>
+		            <input type="checkbox" id="am"> Automata </br>
+		            <input type="checkbox" id="mis"> MIS </br>
+		      </td>
+		</tr>
+		<tr>
+		       <td> Email Id </td>
+		       <td> <input type="text" id="email_id"> </td>
+		</tr>
+		<tr>
+		       <td> Contact No. </td>
+		       <td> <input type="text" id="contact_no"> </td>
+		</tr>
+		<tr>
+		       <td>  </td>
+		       <td> <input type="submit" value="Submit"  id="btnSubmit" > </td>
+		</tr>
+	     </table>
+	     </form>
+	</center>
+</body>
+</html>
+
+
+
+
+
