@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+	<title> Registration Form </title>
+	<style>
+		table{ background-color: pink; }
+		h1{ color: green;}
+		input[type="submit"]
+		{ background-color: green; color: white; width:40%; }
+	</style>
+	<script>
+		function validation()
+		{
+		   var studentName = 
+                                document.getElementById("student_name").value;
+		var admissionNo = 
+                                document.getElementById("admission_no").value;
+		var courseName = 
+                                document.getElementById("course_name").value;
+		var male = 
+                                document.getElementById("male").checked;
+		var female = 
+                                document.getElementById("female").checked;
+		
+		   if(studentName == "" )  {
+			alert("Kindly insert student name");
+		              return false;
+		   }
+		    if(admissionNo == "" )   {
+			alert("Kindly insert admission no.");
+		              return false;
+		   }
+		   if(courseName == "" )   {
+			alert("Kindly select course name.");
+		              return false;
+		   }
+		   if(male == false && female == false )   {
+			alert("Kindly check male or female.");
+		              return false;
+		   }	
+		
+var dbms =    document.getElementById("dbms").checked;
+var mis =       document.getElementById("mis").checked;	
+var am =       document.getElementById("am").checked;	
+var os =        document.getElementById("os").checked;
+var java =     document.getElementById("java").checked;
+var python =  document.getElementById("python").checked;
+var cprog =    document.getElementById("cprog").checked;
+var cpp =       document.getElementById("cpp").checked;	
+     if(dbms == false &&  mis == false && am == false && os == false &&
+      java == false && python == false && cprog == false && cpp == false)
+     {
+          alert("Kindly check any five subjects.");
+	return false;
+     }
+
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1> Registration Form </h1>
+	   <form>
+	   <table border="1" width="60%" cellspacing="1" cellpadding="5">
+		<tr>
+		        <td> Student Name </td>
+		        <td> <input type="text" id="student_name"> </td>
+		</tr>
+		<tr>
+		        <td> Admission No. </td>
+		        <td> <input type="text" id="admission_no"> </td>
+		</tr>		
+		<tr>
+		        <td> Course Name </td>
+		        <td> 
+			<select id="course_name">
+			         <option value=""> Select Course </option>
+			         <option value="BCA">  BCA </option>
+			         <option value="BSc(IT)">  BSc(IT) </option>
+			         <option value="MCA">  MCA  </option>
+			         <option value="MSc(IT)"> MSc(IT) </option>
+			</select>
+		        </td>
+		</tr>
+		<tr>
+		       <td> Gender </td>
+		       <td>
+			<input type="radio" value="Male" name="gender" id="male"> Male
+			<input type="radio" value="Female" name="gender" id="female"> Female
+		       </td>
+		</tr>
+		<tr>
+		        <td> Subjects </td>
+		        <td>
+			<input type="checkbox" id="dbms"> DBMS </br>
+			<input type="checkbox" id="mis"> MIS </br>
+			<input type="checkbox" id="am"> Automata </br>
+			<input type="checkbox" id="os"> OS </br>
+			<input type="checkbox" id="java"> Java </br>
+			<input type="checkbox" id="python"> Python </br>
+			<input type="checkbox" id="cprog"> C Prog. </br>
+			<input type="checkbox" id="cpp"> C++ Prog. </br>
+		        </td>
+		</tr>
+		<tr>
+		        <td> Email id </td>
+		        <td> <input type="text" id="emailid" ></td>
+		</tr>
+		<tr>
+		        <td> Contact No. </td>
+		        <td> <input type="text" id="contactno"></td>
+		</tr>
+		<tr>
+		       <td></td>
+		       <td> <input type="submit" value="SAVE" onclick="return validation();" ></td>
+		</tr>
+	   </table>
+	   </form>
+	</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
