@@ -1,0 +1,66 @@
+<!--
+3. Write a program to find the list of even and odd numbers,
+number list inserted by user in textbox and print output below
+textbox.
+For example: insert number: 2, 6, 9, 34, 76, 21, 37, 64, 77
+Even numbers: 2, 6, 34, 76, 64
+Odd numbers: 9, 21, 37, 77
+-->
+
+<!doctype html>
+<head>
+	<title> Even Odd List</title>
+<script  src="https://code.jquery.com/jquery-3.6.4.min.js"></script>	
+	<script>
+	      $(document).ready(function(){ 
+		$("#btnSubmit").click(function(){
+		   var numbersList = $("#txtNumber").val();
+		   var EvenNumbers = "", OddNumbers = "";
+		   var values = numbersList.split(",");
+		   for(var i = 0; i < values.length; i++)
+		   {
+			if(values[i] % 2 == 0)
+			{
+			  EvenNumbers  += values[i] + ", ";
+			}
+			else
+			{
+			   OddNumbers += values[i] + ", ";
+			}
+		   }
+		$("#result").text("Even number list : " + EvenNumbers  
+			 + " Odd number list : "  + OddNumbers );
+		});
+	      });
+	</script>
+
+</head>
+<body>
+	<center>
+		<h1> Find Even Odd List </h1>
+	<table>
+		     <tr>
+			<td> Insert Numbers </td>
+	 <td> <input type="text" id="txtNumber"> </td>
+		     </tr>
+		     <tr>
+		            <td></td>
+		<td> 
+<input type="submit" value="Submit" id="btnSubmit"> 
+	</td>
+		     </tr>
+		</table>
+	<div id="result"></div>
+	</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
